@@ -1,5 +1,6 @@
 import React from "react";
 import type { TaskType } from "@/models/task.model";
+import styles from "@/styles/NotEditingTask.module.css"
 
 interface NotEditingTaskProps {
     task: TaskType,
@@ -17,7 +18,7 @@ export function NotEditingTask (props: NotEditingTaskProps) {
     } = props;
     
     return (
-        <article>
+        <article className={styles.article}>
             <label>
                 <input 
                     type="checkbox"
@@ -27,8 +28,16 @@ export function NotEditingTask (props: NotEditingTaskProps) {
                 />
                 <span>{task.text}</span>
             </label>
-            <button onClick={onEditTask}>Edit</button>
-            <button onClick={onDeleteTask}>Delete</button>
+            <div className={styles.buttonsContainer}>
+                <button 
+                    onClick={onEditTask}
+                    className={styles.button}
+                >Edit</button>
+                <button 
+                    onClick={onDeleteTask}
+                    className={styles.button}
+                >Delete</button>
+            </div>
         </article>
     );
 }

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { saveTask } from "@/api";
+import styles from "@/styles/TaskHeader.module.css";
 
 export function TaskHeader () {
     const [text, setText] = useState("");
@@ -29,20 +30,21 @@ export function TaskHeader () {
     }
 
     return (
-        <section>
-            <label>
-                <span>Add task</span>
-                <input
-                    type="text" 
-                    value={text}
-                    onChange={onChangeText}
-                    onKeyDown={onAddTaskByEnter}
-                    name="addTask"
-                />
-            </label>
-            <button onClick={onAddTask}>Add</button>
+        <section className={styles.section}>
+            <label htmlFor="addTask">Add task</label>
+            <input
+                type="text" 
+                value={text}
+                onChange={onChangeText}
+                onKeyDown={onAddTaskByEnter}
+                name="addTask"
+                id="addTask"
+                className={styles.input}
+            />
+            <button 
+                onClick={onAddTask}
+                className={styles.button}
+            >Add</button>
         </section>
     );
 }
-
-let nextId:number = 2;

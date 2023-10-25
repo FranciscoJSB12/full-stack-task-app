@@ -1,0 +1,16 @@
+.article {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
