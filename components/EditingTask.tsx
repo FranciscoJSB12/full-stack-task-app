@@ -1,6 +1,7 @@
 import React from "react";
 import type { TaskType } from "@/models/task.model";
 import type { EditingStateType } from "./Task";
+import styles from "@/styles/EditingTask.module.css";
 
 interface EditingTaskProps {
     task: TaskType,
@@ -24,21 +25,32 @@ export function EditingTask (props: EditingTaskProps) {
     } = props;
     
     return (
-        <article>
-            <input 
-                type="checkbox"
-                name={task.text}
-                checked={task.done}
-                onChange={onCheckTask}
-            />
-            <input
-                type="text" 
-                value={editing.text}
-                onChange={onEditTaskText}
-                onKeyDown={onSaveEditedTaskByEnter}
-            />
-            <button onClick={onSaveEditedTaskByClick}>Save</button>
-            <button onClick={onDeleteTask}>Delete</button>
+        <article className={styles.article}>
+            <div>
+                <input 
+                    type="checkbox"
+                    name={task.text}
+                    checked={task.done}
+                    onChange={onCheckTask}
+                />
+                <input
+                    type="text" 
+                    value={editing.text}
+                    onChange={onEditTaskText}
+                    onKeyDown={onSaveEditedTaskByEnter}
+                    className={styles.textInput}
+                />
+            </div>
+            <div className={styles.buttonsContainer}>
+                <button 
+                    onClick={onSaveEditedTaskByClick}
+                    className={styles.button}
+                >Save</button>
+                <button 
+                    onClick={onDeleteTask}
+                    className={styles.button}
+                >Delete</button>
+            </div>
         </article>
     );
 }

@@ -15,7 +15,7 @@ async function Home() {
         <FetchError/>
       );
     }
-
+    
     const tasks = data.map(t => <Task key={t.id} task={t}/>);
     const totalTasks = tasks.length;
 

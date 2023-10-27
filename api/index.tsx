@@ -11,7 +11,15 @@ interface ChangeTaskType {
     done: boolean
 }
 
-const baseUrl = "http://localhost:3001/api/tasks";
+type HeadersType = {
+    "Content-Type": string;
+}
+
+const baseUrl:string = "http://localhost:3001/api/v1/tasks";
+
+const headers:HeadersType = {
+    "Content-Type": "application/json"
+}
 
 export async function getAllTasks(): Promise<TaskType[] | undefined> {
     try {
@@ -20,43 +28,39 @@ export async function getAllTasks(): Promise<TaskType[] | undefined> {
         });
         const data = await res.json();
         return data;
-
     } catch(err) {
         console.error(err);
     }
-
 }
 
-export async function saveTask(task: SaveTaskType): Promise<TaskType> {
-    const res = await fetch(baseUrl, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(task),
-    });
-
-    const newTodo = await res.json();
-
-    return newTodo;
+export async function saveTask(task: SaveTaskType): Promise<void> {
+    try {
+        await fetch(baseUrl, {
+            method: "POST",
+            headers,
+            body: JSON.stringify(task),
+        });
+    } catch (err) {
+        console.error(err)
+    }
 }
 
 export async function deleteTask(id: number): Promise<void> {
-    await fetch(baseUrl, {
-       method: "DELETE", 
-       headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ id })
-    });
+    try {
+        await fetch(`${baseUrl}/${id}`, { method: "DELETE" });
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 export async function changeTask({ id, text, done}:ChangeTaskType): Promise<void> {
-    await fetch(baseUrl, {
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ id, text, done})
-    });
+    try {
+        await fetch(`${baseUrl}/${id}`, {
+            method: "PATCH",
+            headers,
+            body: JSON.stringify({ text, done })
+        });
+    } catch (err) {
+        console.error(err);
+    }
 }
