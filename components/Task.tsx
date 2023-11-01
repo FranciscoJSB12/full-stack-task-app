@@ -25,8 +25,8 @@ export function Task ({ task }: TaskProps) {
     }
 
     return (
-        <article className={styles.article}>
-            <div className={styles.textContainer}>
+        <article className={styles.TaskArticle}>
+            <div className={styles.TaskTextContainer}>
                 <input 
                     type="checkbox"
                     name={task.text}
@@ -36,11 +36,10 @@ export function Task ({ task }: TaskProps) {
                 />
                 <label 
                     htmlFor={`id-${task.id}`}
-                    className={styles.label}
                 >{task.text}</label>
             </div>
-            <div className={styles.buttonsContainer}>
-                <Link href={`/tasks/${task.id}`} className={styles.editButton}>
+            <div className={styles.TaskButtonsContainer}>
+                <Link href={`/tasks/${task.id}`} className={styles.TaskEditButton}>
                     Edit
                 </Link>
                 <button 

@@ -27,8 +27,8 @@ export function EditTask ({ task }: EditTaskProps) {
     }
     
     return (
-        <section className={styles.editTaskSection}>
-            <div className={styles.checkContainer}>
+        <section className={styles.EditTaskSection}>
+            <div className={styles.EditTaskCheckContainer}>
                 <label htmlFor={`id-${task.id}`}>Done:</label>
                 <input
                     type="checkbox"
@@ -37,13 +37,13 @@ export function EditTask ({ task }: EditTaskProps) {
                     id={`id-${task.id}`}
                 />
             </div>
-            <div className={styles.textAreaContainer}>
+            <div className={styles.EditTaskTextAreaContainer}>
                 <textarea
                    value={newTask.text}
                    onChange={(e) => setNewTask({...newTask, text: e.target.value})}
                 />
             </div>
-            <div className={styles.buttonsContainer}>
+            <div className={styles.EditTaskButtonsContainer}>
                 <button 
                     onClick={onChangeTask}
                 >Save</button>

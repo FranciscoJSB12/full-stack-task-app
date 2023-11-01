@@ -1,13 +1,9 @@
-.article {
+.TaskArticle {
     display: flex;
     justify-content: space-between;
 }
 
-.label {
-    font-size: 1.4rem;
-}
-
-.textContainer {
+.TaskTextContainer {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -16,12 +12,16 @@
     margin-right: 12px;
 }
 
-.buttonsContainer {
+.TaskTextContainer label {
+    font-size: 1.4rem;
+}
+
+.TaskButtonsContainer {
     display: flex;
     gap: 12px;
 }
 
-.buttonsContainer  button, .editButton {
+.TaskButtonsContainer  button, .TaskEditButton {
     width: 48px;
     height: 24px;
     padding: 4px 0;
@@ -32,7 +32,7 @@
     cursor: pointer;
 }
 
-.editButton {
+.TaskEditButton {
     text-align: center;
     background-color: #F0F0F0;
     text-decoration: none;

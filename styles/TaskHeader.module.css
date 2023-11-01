@@ -1,4 +1,4 @@
-.section {
+.TaskHeaderSection {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,7 @@
     margin-bottom: 20px;
 }
 
-.input {
+.TaskHeaderInput {
     width: 80%;
     height: 30px;
     padding: 4px 8px;
@@ -14,11 +14,11 @@
     border: 1px solid #ccc;
 }
 
-.input:focus {
+.TaskHeaderInput:focus {
     outline: none;
 }
 
-.button {
+.TaskHeaderButton {
     height: 40px;
     width: 40px;
     border-radius: 50%;

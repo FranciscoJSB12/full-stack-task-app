@@ -1,10 +1,10 @@
-.section {
+.TaskListSection {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-.p {
+.TaskListErrorText {
     padding: 12px 0;
     font-size: 1.8rem;
     text-align: center;

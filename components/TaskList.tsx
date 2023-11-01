@@ -6,14 +6,15 @@ interface TaskListProps {
 }
 
 export function TaskList ({ tasks }: TaskListProps) {
+    
     if (tasks.length === 0) {
         return (
-            <p className={styles.p}>No tasks have been found</p>
+            <p className={styles.TaskListErrorText}>No tasks have been found</p>
         );
     }
 
     return (
-        <section className={styles.section}>
+        <section className={styles.TaskListSection}>
           {tasks}
         </section>
     );

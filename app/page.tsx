@@ -24,15 +24,15 @@ async function Home() {
 
     return (
       <>
-        <header className={styles.header}>
+        <header className={styles.PageHeader}>
           <h1>Task list</h1>
           <h2>You've completed {completedTasks} out of {totalTasks}</h2>
         </header>
         <main>
-            <TaskHeader/>
-            <TaskList
-              tasks={tasks}
-            />
+          <TaskHeader/>
+          <TaskList
+            tasks={tasks}
+          />
         </main>
       </>
     );

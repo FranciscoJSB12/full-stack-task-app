@@ -1,38 +1,39 @@
-.editTaskSection {
+.EditTaskSection {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.checkContainer {
+.EditTaskCheckContainer {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.checkContainer label {
+.EditTaskCheckContainer label {
     font-size: 1.6rem;
 }
 
-.textAreaContainer textarea {
+.EditTaskTextAreaContainer textarea {
     width: 100%;
     height: 80px;
     font-family: inherit;
     font-size: 1.6rem;
+    padding: 4px;
 }
 
-.textAreaContainer textarea:focus {
+.EditTaskTextAreaContainer textarea:focus {
     outline: none;
 }
 
-.buttonsContainer {
+.EditTaskButtonsContainer {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-.buttonsContainer button {
+.EditTaskButtonsContainer button {
     width: 70px;
     padding: 12px 0;
     cursor: pointer;

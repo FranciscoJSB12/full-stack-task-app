@@ -1,7 +1,7 @@
+import React from "react";
 import type { TaskType } from "@/models/task.model";
 import { getOneTask } from "@/api";
 import { EditTask } from "@/components/EditTask";
-import { FetchError } from "@/components/FetchError";
 import styles from "./page.module.css";
 
 interface PagePropsType {
@@ -12,25 +12,28 @@ interface PagePropsType {
 
 type OneTaskType = TaskType | undefined;
 
-async function Page ({ params }:PagePropsType) {
+async function Page ({ params }: PagePropsType) {
     const task: OneTaskType = await getOneTask(params.id);
+    
+    let content: React.JSX.Element;
 
     if (!task) {
-        return (
-            <FetchError/>
-        );
+        content = <p className={styles.PageErrorText}>Error while fetching the data</p>;
+    } else {
+        content = <EditTask task={task}/>;
     }
 
+
     return (
-        <main>
-            <header className={styles.header}>
+        <>
+            <header className={styles.PageHeader}>
                 <h1>Need to edit something?</h1>
                 <h2>Edit here. Check, uncheck, change text, delete... Everything!</h2>
             </header>
-            <EditTask
-                task={task}
-            />
-        </main>
+            <main>
+                {content}
+            </main>
+        </>
     );
 }
 

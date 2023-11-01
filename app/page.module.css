@@ -1,17 +1,17 @@
-.header {
+.PageHeader {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin-bottom: 20px;
 }
 
-.header h1 {
+.PageHeader h1 {
     font-style: italic;
     font-size: 2.2rem;
     font-weight: 400;
 }
 
-.header h2 {
+.PageHeader h2 {
     text-align: center;
     font-size: 1.8rem;
 }

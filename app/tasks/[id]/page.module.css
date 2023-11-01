@@ -1,3 +1,8 @@
-.header {
+.PageHeader {
     margin-bottom: 32px;
+}
+
+.PageErrorText {
+    text-align: center;
+    font-size: 1.8rem;
 }
