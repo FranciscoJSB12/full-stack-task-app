@@ -8,7 +8,7 @@ interface TaskListProps {
 export function TaskList ({ tasks }: TaskListProps) {
     if (tasks.length === 0) {
         return (
-            <p>No tasks have been found</p>
+            <p className={styles.p}>No tasks have been found</p>
         );
     }
 

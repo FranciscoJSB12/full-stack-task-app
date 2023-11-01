@@ -31,20 +31,19 @@ export function TaskHeader () {
 
     return (
         <section className={styles.section}>
-            <label htmlFor="addTask">Add task</label>
             <input
                 type="text" 
                 value={text}
                 onChange={onChangeText}
                 onKeyDown={onAddTaskByEnter}
                 name="addTask"
-                id="addTask"
                 className={styles.input}
+                placeholder="Add a task"
             />
             <button 
                 onClick={onAddTask}
                 className={styles.button}
-            >Add</button>
+            >+</button>
         </section>
     );
 }

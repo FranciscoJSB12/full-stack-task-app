@@ -1,0 +1,41 @@
+.editTaskSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.checkContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.checkContainer label {
+    font-size: 1.6rem;
+}
+
+.textAreaContainer textarea {
+    width: 100%;
+    height: 80px;
+    font-family: inherit;
+    font-size: 1.6rem;
+}
+
+.textAreaContainer textarea:focus {
+    outline: none;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.buttonsContainer button {
+    width: 70px;
+    padding: 12px 0;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}

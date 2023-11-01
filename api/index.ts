@@ -12,7 +12,7 @@ interface ChangeTaskType {
 }
 
 type HeadersType = {
-    "Content-Type": string;
+    "Content-Type": string
 }
 
 const baseUrl:string = "http://localhost:3001/api/v1/tasks";
@@ -28,6 +28,16 @@ export async function getAllTasks(): Promise<TaskType[] | undefined> {
         });
         const data = await res.json();
         return data;
+    } catch(err) {
+        console.error(err);
+    }
+}
+
+export async function getOneTask(id:string): Promise<TaskType | undefined> {
+    try {
+        const res = await fetch(`${baseUrl}/${id}`, { cache: "no-store" });
+        const { task } = await res.json();
+        return task;
     } catch(err) {
         console.error(err);
     }
@@ -53,7 +63,7 @@ export async function deleteTask(id: number): Promise<void> {
     }
 }
 
-export async function changeTask({ id, text, done}:ChangeTaskType): Promise<void> {
+export async function changeTask({ id, text, done }:ChangeTaskType): Promise<void> {
     try {
         await fetch(`${baseUrl}/${id}`, {
             method: "PATCH",

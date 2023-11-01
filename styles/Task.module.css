@@ -1,0 +1,40 @@
+.article {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    font-size: 1.4rem;
+}
+
+.textContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    margin-right: 12px;
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 12px;
+}
+
+.buttonsContainer  button, .editButton {
+    width: 48px;
+    height: 24px;
+    padding: 4px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px #ccc;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.editButton {
+    text-align: center;
+    background-color: #F0F0F0;
+    text-decoration: none;
+    color: #000;
+}
