@@ -40,3 +40,10 @@
     border: 1px solid #ccc;
     border-radius: 8px;
 }
+
+@media (min-width: 480px) {
+    .EditTaskSection {
+        max-width: 480px;
+        margin: 0 auto;
+    }
+}

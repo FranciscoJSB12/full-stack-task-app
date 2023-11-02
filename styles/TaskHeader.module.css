@@ -1,4 +1,5 @@
 .TaskHeaderSection {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,4 +27,12 @@
     box-shadow: 0px 4px 8px #ccc;
     font-size: 2rem;
     font-weight: 400;
+    cursor: pointer;
+}
+
+@media (min-width: 480px) {
+    .TaskHeaderSection {
+        max-width: 480px;
+        margin: 0 auto 20px;
+    }
 }

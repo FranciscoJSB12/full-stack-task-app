@@ -23,7 +23,6 @@ async function Page ({ params }: PagePropsType) {
         content = <EditTask task={task}/>;
     }
 
-
     return (
         <>
             <header className={styles.PageHeader}>

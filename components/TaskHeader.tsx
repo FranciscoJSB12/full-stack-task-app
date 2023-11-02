@@ -39,6 +39,7 @@ export function TaskHeader () {
                 name="addTask"
                 className={styles.TaskHeaderInput}
                 placeholder="Add a task"
+                autoComplete="off"
             />
             <button 
                 onClick={onAddTask}
