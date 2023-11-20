@@ -1,8 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { IoIosAddCircle } from "react-icons/io";
 import { saveTask } from "@/api";
-import styles from "@/styles/TaskHeader.module.css";
+import styles from "@/styles/TaskHeader.module.scss";
+import iconStyles from "@/styles/Icons.module.scss";
 
 export function TaskHeader () {
     const [text, setText] = useState("");
@@ -30,21 +32,21 @@ export function TaskHeader () {
     }
 
     return (
-        <section className={styles.TaskHeaderSection}>
+        <section className={styles.section}>
             <input
                 type="text" 
                 value={text}
                 onChange={onChangeText}
                 onKeyDown={onAddTaskByEnter}
-                name="addTask"
-                className={styles.TaskHeaderInput}
                 placeholder="Add a task"
                 autoComplete="off"
             />
-            <button 
-                onClick={onAddTask}
-                className={styles.TaskHeaderButton}
-            >+</button>
+            <button className={styles.sectionButton}>
+                <IoIosAddCircle
+                    className={iconStyles.addIcon}
+                    onClick={onAddTask}
+                />
+            </button>
         </section>
     );
 }

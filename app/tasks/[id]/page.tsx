@@ -2,7 +2,6 @@ import React from "react";
 import type { TaskType } from "@/models/task.model";
 import { getOneTask } from "@/api";
 import { EditTask } from "@/components/EditTask";
-import styles from "./page.module.css";
 
 interface PagePropsType {
     params: {
@@ -18,21 +17,17 @@ async function Page ({ params }: PagePropsType) {
     let content: React.JSX.Element;
 
     if (!task) {
-        content = <p className={styles.PageErrorText}>Error while fetching the data</p>;
+        content = <p>Error while fetching the data</p>;
     } else {
         content = <EditTask task={task}/>;
     }
 
     return (
-        <>
-            <header className={styles.PageHeader}>
-                <h1>Need to edit something?</h1>
-                <h2>Edit here. Check, uncheck, change text, delete... Everything!</h2>
-            </header>
-            <main>
-                {content}
-            </main>
-        </>
+        <main>
+            <h1>Need to edit something?</h1>
+            <h2>Edit here. Check, uncheck, change text, delete... Everything!</h2>
+            {content}
+        </main>
     );
 }
 

@@ -3,7 +3,10 @@ import React, { useState } from "react";
 import type { TaskType } from "@/models/task.model";
 import { useRouter } from "next/navigation";
 import { deleteTask, changeTask } from "@/api";
-import styles from "@/styles/EditTask.module.css";
+import { FaCheckCircle, FaPen, FaRegTrashAlt } from "react-icons/fa";
+import { IoSaveOutline } from "react-icons/io5";
+import { getIconColor } from "@/utils/getIconColor";
+import iconStyles from "../styles/Icons.module.scss";
 
 interface EditTaskProps {
     task:  TaskType
@@ -25,31 +28,37 @@ export function EditTask ({ task }: EditTaskProps) {
         router.refresh();
         router.back();
     }
-    
+
     return (
-        <section className={styles.EditTaskSection}>
-            <div className={styles.EditTaskCheckContainer}>
-                <label htmlFor={`id-${task.id}`}>Done:</label>
-                <input
-                    type="checkbox"
-                    checked={newTask.done}
-                    onChange={(e) => setNewTask({...newTask, done: e.target.checked})}
-                    id={`id-${task.id}`}
-                />
+        <section>
+            <div>
+                <label>
+                    <span>Done:</span>
+                    <FaCheckCircle 
+                        className={getIconColor(newTask.done)}
+                        onClick={() => setNewTask({...newTask, done: !newTask.done})}
+                    />
+                </label>
             </div>
-            <div className={styles.EditTaskTextAreaContainer}>
+            <div>
                 <textarea
                    value={newTask.text}
                    onChange={(e) => setNewTask({...newTask, text: e.target.value})}
                 />
             </div>
-            <div className={styles.EditTaskButtonsContainer}>
-                <button 
-                    onClick={onChangeTask}
-                >Save</button>
-                <button 
-                    onClick={onDeleteTask}
-                >Delete</button>
+            <div>
+                <button>
+                    <IoSaveOutline 
+                        className={iconStyles.saveIcon}
+                        onClick={onChangeTask}
+                    />
+                </button>
+                <button>
+                    <FaRegTrashAlt
+                        className={iconStyles.deleteIcon}
+                        onClick={onDeleteTask}
+                    />
+                </button>
             </div>
         </section>
     );

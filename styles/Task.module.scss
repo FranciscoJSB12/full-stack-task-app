@@ -1,0 +1,17 @@
+.flexContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.article {
+    @extend .flexContainer;
+}
+
+.articleLeftContainer {
+    @extend .flexContainer;
+    align-items: center;
+}
+
+.articleRightContainer {
+    @extend .flexContainer;
+}

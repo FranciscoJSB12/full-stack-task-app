@@ -1,0 +1,13 @@
+.flexCenter {
+    display: flex;
+    align-items: center;
+}
+
+.section {
+    @extend .flexCenter;
+    gap: 16px;
+}
+
+.sectionButton {
+    @extend .flexCenter;
+}
