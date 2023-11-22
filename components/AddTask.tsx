@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { IoIosAddCircle } from "react-icons/io";
 import { saveTask } from "@/api";
-import styles from "@/styles/TaskHeader.module.scss";
+import styles from "@/styles/AddTask.module.scss";
 import iconStyles from "@/styles/Icons.module.scss";
 
-export function TaskHeader () {
+export function AddTask () {
     const [text, setText] = useState("");
     const router = useRouter();
 

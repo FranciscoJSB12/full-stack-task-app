@@ -1,10 +1,10 @@
 .flexContainer {
     display: flex;
-    gap: 20px;
 }
 
 .article {
     @extend .flexContainer;
+    justify-content: space-between;
 }
 
 .articleLeftContainer {
@@ -14,4 +14,11 @@
 
 .articleRightContainer {
     @extend .flexContainer;
+    gap: 20px;
+}
+
+.articleText {
+    font-size: 1.4rem;
+    overflow-wrap: anywhere;
+    margin: 0 20px;
 }

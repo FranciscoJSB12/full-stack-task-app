@@ -30,22 +30,18 @@ export function Task ({ task }: TaskProps) {
 
     return (
         <article className={styles.article}>
-            <div>
-               <label
-                    className={styles.articleLeftContainer}
-               >
+            <label className={styles.articleLeftContainer}>
+                <span className={styles.articleIconContainer}>
                     <FaCheckCircle 
                         className={getIconColor(task.done)}
                         onClick={onCheckTask}
                     />
-                    <span>
-                        {task.text}
-                    </span>
-                </label>
-            </div>
-            <div
-                className={styles.articleRightContainer}
-            >
+                </span>
+                <span className={styles.articleText}>
+                    {task.text}
+                </span>
+            </label>
+            <div className={styles.articleRightContainer}>
                 <Link href={`/tasks/${task.id}`}>
                     <FaPen
                         className={iconStyles.editIcon}
