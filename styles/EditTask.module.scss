@@ -1,0 +1,24 @@
+.sectionTextarea {
+    width: 100%;
+    padding: 8px;
+    height: 80px;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    font-family: inherit;
+}
+
+.sectionButtonsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sectionCheckContainer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.checkContainerText {
+    font-size: 1.4rem;
+}

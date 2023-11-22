@@ -40,13 +40,12 @@ export function AddTask () {
                 onKeyDown={onAddTaskByEnter}
                 placeholder="Add a task"
                 autoComplete="off"
+                className={styles.sectionInput}
             />
-            <button className={styles.sectionButton}>
-                <IoIosAddCircle
+            <IoIosAddCircle
                     className={iconStyles.addIcon}
                     onClick={onAddTask}
-                />
-            </button>
+            />
         </section>
     );
 }

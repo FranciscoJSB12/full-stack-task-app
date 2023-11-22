@@ -25,8 +25,8 @@ async function Home() {
     return (
         <main className={styles.main}>
           <section>
-            <h1>Task list</h1>
-            <h2>You've completed {completedTasks} out of {totalTasks}</h2>
+            <h1 className={styles.sectionTitle}>Task list</h1>
+            <h2 className={styles.sectionText}>You've completed {completedTasks} out of {totalTasks}</h2>
           </section>
           <AddTask/>
           <TaskList

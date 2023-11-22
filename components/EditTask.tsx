@@ -7,6 +7,7 @@ import { FaCheckCircle, FaPen, FaRegTrashAlt } from "react-icons/fa";
 import { IoSaveOutline } from "react-icons/io5";
 import { getIconColor } from "@/utils/getIconColor";
 import iconStyles from "../styles/Icons.module.scss";
+import styles from "@/styles/EditTask.module.scss";
 
 interface EditTaskProps {
     task:  TaskType
@@ -32,21 +33,20 @@ export function EditTask ({ task }: EditTaskProps) {
     return (
         <section>
             <div>
-                <label>
-                    <span>Done:</span>
+                <textarea
+                   value={newTask.text}
+                   onChange={(e) => setNewTask({...newTask, text: e.target.value})}
+                   className={styles.sectionTextarea}
+                />
+            </div>
+            <div className={styles.sectionButtonsContainer}>
+                <label className={styles.sectionCheckContainer}>
+                    <span className={styles.checkContainerText}>Done:</span>
                     <FaCheckCircle 
                         className={getIconColor(newTask.done)}
                         onClick={() => setNewTask({...newTask, done: !newTask.done})}
                     />
                 </label>
-            </div>
-            <div>
-                <textarea
-                   value={newTask.text}
-                   onChange={(e) => setNewTask({...newTask, text: e.target.value})}
-                />
-            </div>
-            <div>
                 <button>
                     <IoSaveOutline 
                         className={iconStyles.saveIcon}

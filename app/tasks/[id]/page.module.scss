@@ -1,0 +1,17 @@
+.main {
+    padding: 80px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sectionTitle {
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.sectionText {
+    font-size: 1.6rem;
+    font-weight: 500;
+}

@@ -9,6 +9,14 @@
     gap: 16px;
 }
 
-.sectionButton {
-    @extend .flexCenter;
+.sectionInput {
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 80px;
+    border: 1px solid #ccc;
+    flex: 1;
+}
+
+.sectionInput:focus {
+    outline: none;
 }
