@@ -47,13 +47,13 @@ export function EditTask ({ task }: EditTaskProps) {
                         onClick={() => setNewTask({...newTask, done: !newTask.done})}
                     />
                 </label>
-                <button>
+                <button className={styles.buttonContainerButton}>
                     <IoSaveOutline 
                         className={iconStyles.saveIcon}
                         onClick={onChangeTask}
                     />
                 </button>
-                <button>
+                <button className={styles.buttonContainerButton}>
                     <FaRegTrashAlt
                         className={iconStyles.deleteIcon}
                         onClick={onDeleteTask}

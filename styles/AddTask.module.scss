@@ -10,7 +10,7 @@
 }
 
 .sectionInput {
-    height: 36px;
+    height: 40px;
     padding: 0 16px;
     border-radius: 80px;
     border: 1px solid #ccc;
@@ -19,4 +19,8 @@
 
 .sectionInput:focus {
     outline: none;
+}
+
+.buttonContainer {
+    width: 50px;
 }

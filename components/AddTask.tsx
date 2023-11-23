@@ -42,10 +42,12 @@ export function AddTask () {
                 autoComplete="off"
                 className={styles.sectionInput}
             />
-            <IoIosAddCircle
+            <div className={styles.buttonContainer}>
+                <IoIosAddCircle
                     className={iconStyles.addIcon}
                     onClick={onAddTask}
-            />
+                />
+            </div>
         </section>
     );
 }

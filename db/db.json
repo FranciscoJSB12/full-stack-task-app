@@ -1,11 +1,6 @@
 {
   "tasks": [
     {
-      "id": "a380fc91-514c-4d77-bb28-ad204ac0681d",
-      "text": "Hola mundito",
-      "done": true
-    },
-    {
       "id": "490ed475-b845-47c6-b526-5bf738918268",
       "text": "Todo bien",
       "done": false
@@ -13,7 +8,7 @@
     {
       "id": "bfe9e830-d813-4346-8c4d-ae3ca8a030db",
       "text": "Hola",
-      "done": false
+      "done": true
     },
     {
       "id": "d33f6c1b-900b-48b9-ba37-27f49dfa0cfb",
