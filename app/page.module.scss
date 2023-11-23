@@ -1,3 +1,5 @@
+@use '@/styles/variables';
+
 .main {
     width: 100%;
     max-width: 1000px;
@@ -9,12 +11,12 @@
 }
 
 .sectionTitle {
-    font-size: 2rem;
+    font-size: variables.$text-xlg;
     font-style: italic;
     margin-bottom: 20px;
 }
 
 .sectionText {
-    font-size: 1.6rem;
+    font-size: variables.$text-lg;
     font-weight: 500;
 }
